@@ -72,7 +72,7 @@ void show_menu() {
 }
 
 /* Essa parte faz parte das features obrigatorias, ele faz parte do menu e é responsável por registrar os funcionarios.
-Primeiramente o id é setado de acordo com a quantidade de funcionarios já registrados (Na primeira execucação esse valor será 1)
+Primeiramente o id é setado de acordo com a quantidade de funcionarios já registrados (Na primeira execucação esse valor será 1). Depois é feito um loop para registrar até 5 funcionarios. Dentro desse loop os campos são solicitados e já passam por suas respectivas validações (se houverem) que estão no arquivo 'validations.h'. Ao final de cada loop a variavel employees_quantity é incrementada em 1 para manter os id's corretos no registro do próximo funcionario. A variavel employees_quantity foi declarada como global para registrar o id correto caso o usuario registre alguns funcionarios, volte pro menu e depois registre mais alguns
 */
 void register_employee() {
   tFuncionario dados;
@@ -116,6 +116,7 @@ void register_employee() {
   } 
 }
 
+/* Nessa função existe a implementação de uma feature obrigatoria que é listar os funcionarios registrados, mas antes é verificado se há algum funcionario registrado, caso não haja, uma mensagem de erro é exibida, mas se houver ao menos um funcionario os dados são impressos na tela */
 void list_employees(){
   if (employees_list[0].nome[0] == '0'){
       printf("\n\n Não há nenhum funcionario cadastrado\n\n");
